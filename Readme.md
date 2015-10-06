@@ -1,6 +1,6 @@
 # dimg
 
-Dynamically load images at the exact pixel size needed based on the viewport.
+Dynamically get the rendered size of an image no matter what the css says about screen size and layout, then use those dimensions for your image request.
 
 ## Usage
 
@@ -37,4 +37,7 @@ That's it! dimg will load your images using the exact dimensions required.
 ## Coming soon
 
  * Demo
+ * More browser support
+ * JQuery plugin
+ * React Component
  * NPM package

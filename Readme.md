@@ -22,7 +22,7 @@ with a [`NodeList`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
 and a resizing function:
 
 ```javascript
-function myResizingService(image, source, width, height) {
+function myResizingService(source, width, height) {
   return 'http://firesize.com/' + width + 'x' + height + '/g_center/' + source;
 }
 

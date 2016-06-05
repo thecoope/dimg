@@ -3,37 +3,702 @@
   <head>
     <title>dimg</title>
     <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
     <style>
-      body {
-        padding: 0;
-        margin: 0;
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  background: #060606;
+  color: #fff;
+  font-size: 10px;
+  
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6em;
+}
+
+.nav {
+
+}
+
+.row {
+  
+}
+
+.col {
+  
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .875ch;
+  font-weight: bold;
+}
+
+.links a {
+  -webkit-transition: color ease .325s;
+  transition: color ease .325s;
+}
+
+.links a:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.wrapper:before,
+.wrapper:after,
+.nav::before,
+.nav::after,
+.row:before,
+.row:after {
+  content: '';
+  display: table;
+}
+
+.row:after,
+.wrapper:after,
+.nav::after {
+  clear: both;
+}
+
+.nav-logo-link {
+  display: table;
+  margin-left: -1rem;
+  padding-left: 1rem;
+  height: 10rem;
+  position: relative;
+  -webkit-transition: opacity ease .325s;
+  transition: opacity ease .325s;
+}
+
+.nav-logo-link-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.footer-logo-link:hover,
+.nav-logo-link:hover {
+  opacity: .65;
+}
+
+.nav-logo {
+  height: 4rem;
+  width: auto;
+}
+
+.nav-logo--tag {
+  height: 3rem;
+}
+
+a.footer-logo-link {
+  -webkit-transition: opacity ease .325s;
+  transition: opacity ease .325s;
+}
+
+.footer-logo {
+  height: 2rem;
+  width: auto;
+  margin-top: .3rem;
+}
+
+.alist {
+  margin: 2rem 0;
+  padding-left: 2.5ch;
+  list-style: none;
+}
+
+.alist li::before {
+  content: '\2014';
+  margin-left: -2.5ch;
+  display: inline-block;
+  width: 2.5ch;
+}
+
+.nav-links {
+  margin-right: -1rem;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.col-left,
+.nav-left {
+  float: left;
+}
+
+.col-right,
+.nav-right {
+  float: right;
+}
+
+.footer-links a {
+  padding: .5rem 0;
+  display: inline-block;
+}
+
+.nav-links a {
+  padding: 0 1rem;
+  line-height: 10rem;
+  display: block;
+  height: 10rem;
+}
+
+.nav-current {
+  cursor: default;
+  pointer-events: none;
+}
+
+.body {
+  min-height: 90vh;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.endcap {
+  background: #fff;
+  color: #000;
+}
+
+.endcap a {
+  color: #000;
+}
+
+.endcap a:hover {
+  color: #888;
+}
+
+.wrapper {
+  max-width: 92rem;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+.content {
+  margin: 4rem 0;
+}
+
+.footer {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.footer::before {
+  position: absolute;
+  height: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-image: 
+    linear-gradient(
+      to right,
+      #0D0,
+      #0D0 20%,
+      #FA0 20%,
+      #FA0 40%,
+      #F09 40%,
+      #F09 60%,
+      #86F 60%,
+      #86F 80%,
+      #0BF 80%,
+      #0BF 100%
+    );
+  background-image: 
+    linear-gradient(
+      to right,
+      #0D0,
+      #FA0,
+      #F09,
+      #86F,
+      #0BF
+    );
+}
+
+.header {
+  height: 10rem;
+  line-height: 1;
+  background: none;
+}
+
+.header-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  height: inherit;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 2px 0 rgba(0,0,0,1);
+}
+
+.endcap {
+  font-size: 1rem;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav h2 {
+  position: absolute;
+  top: 50%;
+  margin: -1ex 0 0;
+  font-size: 2.4rem;
+}
+.nav h2 strong {
+  color: #000;
+}
+
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+h3 { font-size: 1.6em; }
+
+h4 { font-size: 1.2em;}
+
+.nav-tag {
+  position: relative;
+}
+
+.nav-tag:before {
+  content: 'Brought to you by : ';
+  position: absolute;
+  right: 100%;
+  white-space: nowrap;
+  top: 50%;
+  margin-top: -1.2ex;
+  margin-right: 1.5ch;
+  letter-spacing: .1ch;
+  font-weight: bold;
+}
+
+.btn {
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+  letter-spacing: .1ch;
+  font-weight: bold;
+  position: relative;
+}
+
+.btn--large {
+  padding: 2rem 4rem;
+}
+
+.btn--center {
+  margin: 2rem auto;
+  display: table;
+}
+
+.btn:hover {
+  box-shadow: inset 0 -.3rem 0px rgba(0,0,0,.4);
+}
+
+.btn:active {
+  top: 1px;
+  
+}
+
+.project {
+  
+}
+
+.project-exp {
+  width: 100vw;
+  position: relative;
+  left: -50vw;
+  margin-left: 50%;
+  padding: 2rem 0;
+}
+
+.project-cta {
+  text-align: center;
+}
+
+.project-cta,
+.project-footer,
+.project-desc {
+  margin: 4rem 0;
+}
+
+.project pre {
+  border-radius: 3px;
+  background: #ddd;
+  color: #555;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.project code {
+  min-width: calc(100% + 1px);
+  display: table;
+  padding: 2ch 2ch;
+  
+  font-size: .75em;
+}
+
+@media(min-width:601px) {
+  
+  body {
+    font-size: 2em;
+  }
+  
+  code {
+    font-size: .625em;
+  }
+}
+
+
+/*
+
+#0D0
+#FA0
+#F09
+#86F
+#0BF
+
+*/
+
+.nav-current {
+  border-bottom: 4px solid #F09;
+}
+
+a,
+.nav h2 {
+  color: #F09;
+}
+
+.btn,
+.project-exp {
+  background-color: #F09;
+}
+
+
+@media(min-width:601px) {
+  .project-exp {
+    background-attachment: fixed;
+    background-image: 
+      linear-gradient(
+        to right bottom,
+        #0D0,
+        #FA0,
+        #F09,
+        #86F,
+        #0BF
+      );
+      background-position: center 10rem;
+  }
+}
+
+@media(max-width:600px) {
+  .nav-logo {
+    height: 1.8rem;
+  }
+  .footer-logo {
+    height: 1.3rem;
+  }
+  /*
+  .wrapper {
+    padding: 0 1rem;
+  }
+  */
+  .links {
+    letter-spacing: .5ch;
+  }
+  /*
+  .nav-links {
+    padding-right: 1rem;
+  }
+  */
+  .header,
+  .nav-logo-link {
+    height: 7rem;
+  }
+  .nav-links a {
+    height: 7rem;
+    line-height: 7rem;
+    padding: 0 .5rem;
+  }
+}
+
+@media(max-width:420px) {
+  .nav h2 {
+    font-size: 1.4rem;
+  }
+  .nav-tag:before {
+    content: 'From : ';
+  }
+  .header,
+  .nav-logo-link {
+    height: 5rem;
+  }
+  .nav-links a {
+    height: 5rem;
+    line-height: 5rem;
+  }
+}
+    </style>
+    <style>
+      
+      .project-exp {
+        overflow: hidden;
+        font-size: 0;
       }
-      img {
-        max-width: 50%;
-        max-height: 400px;
+      
+      .project-exp-inner {
+        max-width: none;
+        text-align: center;
+        margin: 0 -23rem 0;
+        margin-bottom: calc(-1 * (((25vw + 25vh) / 2) + 4rem));
+      }
+      
+      .project-exp img {
+        height: 25vw;
+        height: calc((25vw + 25vh) / 2);
+        width: auto;
+        display: inline-block;
+        background: #999;
+        border-radius: .3rem;
+        margin: 0 2rem 2rem 0;
+      }
+      @media (max-width: 600px) {
+      
+        .project-exp {
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+          white-space: nowrap;
+        }
+        
+        .project-exp-inner {
+          margin: 0;
+        }
+        
+        .project-exp img {
+          height: 50vw;
+          max-height: 50vh;
+          margin: 0 2rem 0 0;
+        }
       }
     </style>
   </head>
   <body>
-    <img
-      data-dimg="http://i.imgur.com/r3CbX4f.jpg"
-      data-dimg-w="1920"
-      data-dimg-h="1072"
-    >
-    <img
-      data-dimg="http://i.imgur.com/kMzPUlA.jpg"
-      data-dimg-w="768"
-      data-dimg-h="1024"
-    >
+  
+    <div class="header endcap">
+      <div class="header-inner">
+        <div class="wrapper">
+          <div class="nav">
+            <div class="nav-left">
+              <h2>Dimg<strong>.js</strong></h2>
+            </div>
+            <div class="nav-right">
+              <div class="nav-tag">
+                <a class="nav-logo-link" href="./">
+                  <div class="nav-logo-link-inner">
+                    <img class="nav-logo nav-logo--tag" src="http://hi.jonjohnjohnson.com/playground/coopeWebsite/assets/images/logo-coope--bleed-no.svg" >
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="body">
+      <div class="wrapper">
+        <div class="content">
+        
+        
+          <div class="project">
+            <div class="project-hero">
+              <div class="project-hero-tag">
+                <h3>It solves all the confusion and complexities around "responsive" images.</h3>
+              </div>
+              <div class="project-hero-img">
+                <img src="//placebear.com/400/200">
+              </div>
+            </div>
+            <div class="project-desc">
+              <h4>Commentary and other approaches to responsive images</h4>
+              <ul class="alist">
+                <li><a href="http://alistapart.com/article/responsive-images-in-practice">responsive-images-in-practice</a></li>
+                <li><a href="http://adaptive-images.com/details.htm">http://adaptive-images.com/</a></li>
+                <li><a href="https://css-tricks.com/which-responsive-images-solution-should-you-use/">which-responsive-images-solution-should-you-use/</a></li>
+                
+                <li><a href="https://www.smashingmagazine.com/2013/07/choosing-a-responsive-image-solution/">choosing-a-responsive-image-solution/</a></li>
+                <li><a href="https://www.smashingmagazine.com/2014/02/one-solution-to-responsive-images/">one-solution-to-responsive-images/</a></li>
+              </ul>
+              <h4>Instead of using...</h4>
+              <ul class="alist">
+                <li>a bunch of different background images in a bunch of different mediaqueries</li>
+                <li>or the picture element, setting all its cumbersome properties and fallbacks</li>
+              </ul>
+              <p>Just use Dimg and let the browser tell you the exact pixel dimensions needed for the image to appear best without loading in tons of extra data and writing tons of extra code.</p>
+              <p>As long as you have an image resizing server, set the width and height of the full image with the dimg attributes and it's identifier, then dimg will construct the correct url for the exact image request needed.</p>
+              <h4>Example code...</h4>
+<pre><code>&lt;img
+  data-dimg="assets/logo.jpg"
+  data-dimg-width="1200"
+  data-dimg-height="800"
+&gt;
+&lt;script&gt;
+  function myResizingService(source,width,height) {
+    return 'http://service.com/' + width + '/' + height + '/' + source;
+  }
+  dimg(document.querySelectorAll('img[data-dimg]'), myResizingService);
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="project-exp">
+              <div class="project-exp-inner wrapper">
+                <div id="project-exp-imgs" class="project-exp-imgs">
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <h4>Browser support</h4>
+            </div>
+            
+            
+            <div class="project-cta">
+              <h4>This is the footer title cta thing</h4>
+              <a class="btn btn--center btn--large" href="https://github.com/thecoope/dimg">Check it out on github</a>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer endcap">
+      <div class="wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col col-left">
+              <ul class="links footer-links">
+                <li>
+                  <a href="https://github.com/thecoope">Github</a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/coopeshop">Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col col-right right">
+              <ul class="links footer-links">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col center">
+              <ul class="links footer-links">
+                <li>
+                  <a class="footer-logo-link" href="#">
+                    <img class="footer-logo" src="http://hi.jonjohnjohnson.com/playground/coopeWebsite/assets/images/logo-coope--bleed-no.svg" >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+      
     <script src="dimg.js"></script>
     <script>
     // from here on it's however the site wants to implement the script
     function myResizingService(source,width,height) {
-      return 'http://firesize.com/' + width + 'x' + height + '/g_center/' + source;
+      return 'http://placebear.com/' + width + '/' + height;
     }
     window.addEventListener('load',function(){
-      var myDynamicImages = document.querySelectorAll('[data-dimg]');
-      dimg(myDynamicImages, myResizingService);
+      var imgs = document.getElementById('project-exp-imgs');
+      imgs.innerHTML = '';
+      for (var i = 0; i<= 17; i++) {
+        var newImg = document.createElement('img');
+        newImg.dataset.dimg = '';
+        newImg.dataset.dimgLazy = 'true';
+        newImg.dataset.dimgWidth = Math.floor(Math.random()*1200)+800;
+        newImg.dataset.dimgHeight = Math.floor(Math.random()*900)+800;
+        imgs.appendChild(newImg);
+      }
+      
+      var myDynamicImages = document.querySelectorAll('img[data-dimg]');
+      var windowWidth = window.innerWidth;
+      
+      setTimeout(function(){
+        dimg(myDynamicImages, myResizingService);
+      }, 100);
+      
+      window.addEventListener('resize',function(){
+        resizeRecheck();
+      });
+      
+      var resizeRecheck = debounce(function() {
+        if (windowWidth === window.innerWidth) {
+          return;
+        }
+        windowWidth = window.innerWidth
+        dimg(myDynamicImages, myResizingService);
+      }, 500);
+      
+      function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+    });
+    window.addEventListener('touchstart',function(){
+      
     });
     </script>
   </body>
